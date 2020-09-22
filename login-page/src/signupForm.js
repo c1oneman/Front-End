@@ -1,6 +1,6 @@
 import React from 'react'
 import './Login.css'
-export default function loginForm(props) {
+export default function signupForm(props) {
   const {
     values,
     submit,
@@ -22,9 +22,9 @@ export default function loginForm(props) {
 
   return (
     <form className='form' onSubmit={onSubmit}>
-      <div className = 'title'>
-       <h1>How to sign in:</h1>
-       <p><span className='bold'>1.</span> Enter your credentials</p>
+<div className = 'title'>
+       <h1>How to sign up:</h1>
+       <p><span className='bold'>1.</span> Create your credentials</p>
        </div>
         <div className = 'row'>
             <p>Username</p>
@@ -32,7 +32,7 @@ export default function loginForm(props) {
             value={values.username}
             onChange={onChange}
             name='username'
-            placeholder="Enter Username"
+            placeholder="Username"
             type='text'
           />
           <p className = 'errors'>{errors.username}</p>
@@ -45,7 +45,7 @@ export default function loginForm(props) {
           <input
             value={values.password}
             onChange={onChange}
-            placeholder="Your Password"
+            placeholder="Min. 6 characters"
             name='password'
             type='password'
           />  
@@ -53,7 +53,7 @@ export default function loginForm(props) {
             </div>
        
        <div className = 'row'>
-       <button id = "submit" disabled={disabled}>Login</button>
+       <button id = "submit" disabled={disabled}>Sign up</button>
         </div>
       
 

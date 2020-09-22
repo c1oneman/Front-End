@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react'
 import * as yup from 'yup'
 import schema from './validation/formSchema'
 import LoginForm from './loginForm'
+import SignupForm from './signupForm'
 import './Login.css'
+import { Route, Link, Switch } from 'react-router-dom'
+
 const initialFormValues = {
     username: '',
     password: '',
@@ -20,12 +23,17 @@ export default function Form() {
     
     const attemptLogin = loginDetails => {
         // Login function
-        console.log(loginDetails)
-
+        console.log('Signin:' , loginDetails)
         // {username: __, password: __}
         setFormValues(initialFormValues)
     }
+    const attemptSignup = loginDetails => {
+      // Signup function
+      console.log('Signup:' , loginDetails)
 
+      // {username: __, password: __}
+      setFormValues(initialFormValues)
+  }
     const validate = (name, value) => {
         yup
           .reach(schema, name)
@@ -59,31 +67,61 @@ export default function Form() {
   }, [formValues])
 
   
-   const formSubmit = () => {
+   const loginSubmit = () => {
         const loginDetails = {
             username: formValues.username.trim(),
             password: formValues.password.trim(),
           }
           attemptLogin(loginDetails)
       }
-    
+    const signupSubmit = () => {
+        const loginDetails = {
+            username: formValues.username.trim(),
+            password: formValues.password.trim(),
+          }
+          attemptSignup(loginDetails)
+    }
 
   return (
    
     <div>
      <div className = "mainSection">
-       <div className = 'title'>
-       <h1>How to sign in:</h1>
-       <p><span className='bold'>1.</span> Enter your credentials</p>
-       </div>
+       
 
-        <LoginForm
+       
+      
+         <Switch>
+        {/* With Switch, order your Routes from "more specific path" to least */}
+        {/* With Switch, the first Route "wins" */}
+        {/* Without Switch, ALL Routes with paths that match are rendered */}
+        <Route path='/signup'>
+        <SignupForm
         values={formValues}
         change={inputChange}
-        submit={formSubmit}
+        submit={signupSubmit}
         disabled={disabled}
         errors={formErrors}
       />
+        </Route>
+
+        <Route path='/login'>
+          
+        <LoginForm
+        values={formValues}
+        change={inputChange}
+        submit={loginSubmit}
+        disabled={disabled}
+        errors={formErrors}
+      />
+        </Route>
+
+        <Route path='/'>
+        
+        </Route>
+
+        {/* <Route component={Home} path='/' /> */}
+        {/* <Route render={props => <Home />} path='/' /> */}
+      </Switch>
     </div>
     </div>
   )
