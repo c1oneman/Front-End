@@ -1,3 +1,49 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* CSS RESET */
+
 body {
     display: flex;
     justify-content: center;
@@ -6,7 +52,8 @@ body {
     font-family: 'Poppins', sans-serif; 
 }
 .mainSection {
-      background:rgba(92, 92, 92, 0.5);
+      padding:25px;
+      background:#f1faee;
       border-radius: 5px;
       box-shadow: 0 1.5px 0 0 rgba(0,0,0,0.1);
       width:450px;
@@ -22,43 +69,70 @@ body {
     flex-direction: column;
     width:100%;
 }
-.form .row {
+.row {
     width:60%;
+    margin: 12px 0;
 }
+.title {
+    width:60%;
+    text-align: center;
+}
+.title > * {
+    margin: 12px 0;
+}
+
 input {
-  font-family: inherit;
-  width: 100%;
-  text-indent: 0.5rem;
-  margin-bottom: 12px;
-  margin-top: 0px;
-  background-color:rgb(231, 231, 231)(189, 185, 185);
-  font-size: 1.2rem;
-  color: rgb(54, 54, 54);
-  padding: 6px 0;
-  outline: none; /* <-- This thing here */
-  border:solid 1px #ccc;
-  border-radius: 3px;
+    margin-top:8px;
+    transition: box-shadow .15s ease;
+    box-shadow: inset #d8d8da 0 0 0 1px,inset #fff;
+    border: none;
+    color: #000;
+    border-radius: 10px;
+    height: 46px;
+    text-indent: 1rem;
+    font-size: 15px;
+    font-family: Inter,sans-serif;
+    width:100%;
+}
+.bold {
+    font-weight: 800;
 }
 input:focus {
-    outline: none; /* <-- This thing here */
-    border:solid 0px #ccc;
-    border-radius: 3px;
+    outline:none;
+    box-shadow: inset #1d3557 0 0 0 1px,inset #fff 0 0 0 100px!important;
 }
 .errors {
-    color: rgb(255, 13, 13);
+    margin-top:12px;
+    color: #e63946;
+}
+h1 {
+    font-size:2rem;
+    font-weight: 600;
+}
+button {
+    cursor: pointer;
+    width: 100%;
+    font-weight: 600;
+    font-family: Inter,sans-serif;
+    text-align: center;
+    white-space: nowrap;
+    border: none;
+    text-decoration: none;
+}
+button:disabled {
+    cursor: no-drop;
 }
 #submit {
-    height:36px;
-    padding:0 36px;
-    background-color: rgb(20, 223, 71);
-    border-color: rgb(20, 223, 71);
-    color:white;
-    border:6px solid transparent;
+    background: #e63946;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 0 21px;
+    height: 46px;
+    line-height: 45px;
+
 }
 #submit:disabled {
-    height:36px;
-    padding:0 36px;
-    background-color: rgb(71, 168, 95);
-    border:6px solid transparent;
-    color:white;
+    background: #e0717b;
+    color: #fff;
 }

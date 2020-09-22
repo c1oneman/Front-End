@@ -71,8 +71,11 @@ export default function Form() {
   return (
    
     <div>
-     <div class = "mainSection">
-        <h1>Login to Account</h1>
+     <div className = "mainSection">
+       <div className = 'title'>
+       <h1>How to sign in:</h1>
+       <p><span className='bold'>1.</span> Enter your credentials</p>
+       </div>
 
         <LoginForm
         values={formValues}

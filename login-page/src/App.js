@@ -4,7 +4,12 @@ import './App.css';
 
 function App() {
   return (
-    <LoginPage/>
+    <div class="container">
+     
+      <LoginPage/>
+  
+    </div>
+
   );
 }
 

@@ -22,16 +22,17 @@ export default function loginForm(props) {
 
   return (
     <form className='form' onSubmit={onSubmit}>
-      
+
         <div className = 'row'>
             <p>Username</p>
           <input
             value={values.username}
             onChange={onChange}
             name='username'
-            placeholder="user@mail.com"
+            placeholder="Enter Username"
             type='text'
           />
+          <p className = 'errors'>{errors.username}</p>
         </div>
         
       
@@ -41,21 +42,18 @@ export default function loginForm(props) {
           <input
             value={values.password}
             onChange={onChange}
-            placeholder="•••"
+            placeholder="Your Password"
             name='password'
             type='password'
           />  
+           <p className = 'errors'>{errors.password}</p>
             </div>
-        
        
        <div className = 'row'>
        <button id = "submit" disabled={disabled}>Login</button>
         </div>
       
-        <div className='errors'>
-          <p>{errors.username}</p>
-          <p>{errors.password}</p>
-          </div>
+
     </form>
     
   )
