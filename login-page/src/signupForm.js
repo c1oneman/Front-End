@@ -23,45 +23,51 @@ export default function signupForm(props) {
   }
 
   return (
-    <form className='form' onSubmit={onSubmit}>
-<div className = 'title'>
-       <h1>How to sign up:</h1>
-       <p><span className='bold'>1.</span> Create your credentials</p>
-       </div>
-        <div className = 'row'>
+    <div className="container">
+      <div className="mainSection">
+        <form className='form' onSubmit={onSubmit}>
+          <div className='title'>
+            <h1>How to sign up:</h1>
+            <p><span className='bold'>1.</span> Create your credentials</p>
+          </div>
+          <div className='row'>
             <p>Username</p>
-          <input
-            value={values.username}
-            onChange={onChange}
-            name='username'
-            placeholder="Username"
-            type='text'
-          />
-          <p className = 'errors'>{errors.username}</p>
-        </div>
-        
-      
+            <input
+              value={values.username}
+              onChange={onChange}
+              name='username'
+              placeholder="Username"
+              type='text'
+            />
+            <p className='errors'>{errors.username}</p>
+          </div>
 
-      <div className = 'row'>
-          <p>Password</p>
-          <input
-            value={values.password}
-            onChange={onChange}
-            placeholder="Min. 6 characters"
-            name='password'
-            type='password'
-          />  
-           <p className = 'errors'>{errors.password}</p>
-            </div>
-        <div className='row right'>
-        <Link to={`/login`}>Already have an account?</Link>
-       </div>
-       <div className = 'row'>
-       <button id = "submit" disabled={disabled}>Sign up</button>
-        </div>
-      
 
-    </form>
-    
+
+          <div className='row'>
+            <p>Password</p>
+            <input
+              value={values.password}
+              onChange={onChange}
+              placeholder="Min. 6 characters"
+              name='password'
+              type='password'
+            />
+            <p className='errors'>{errors.password}</p>
+          </div>
+          <div className='row right'>
+            <Link to={`/login`}>Already have an account?</Link>
+          </div>
+          <div className='row'>
+            <button id="submit" disabled={disabled}>Sign up</button>
+          </div>
+
+
+        </form>
+
+      </div>
+
+    </div>
+
   )
 }

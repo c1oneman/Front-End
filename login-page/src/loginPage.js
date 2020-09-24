@@ -3,8 +3,9 @@ import * as yup from 'yup'
 import schema from './validation/formSchema'
 import LoginForm from './loginForm'
 import SignupForm from './signupForm'
+import Browser from './browse'
 import './Login.css'
-import { Route, Link, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 const initialFormValues = {
     username: '',
@@ -84,8 +85,7 @@ export default function Form() {
 
   return (
    
-    <div>
-     <div className = "mainSection">
+
        
 
       
@@ -94,7 +94,7 @@ export default function Form() {
         {/* With Switch, order your Routes from "more specific path" to least */}
         {/* With Switch, the first Route "wins" */}
         {/* Without Switch, ALL Routes with paths that match are rendered */}
-        <Route exact path='/signup'>
+        <Route path='/signup'>
         
         <SignupForm
         values={formValues}
@@ -105,25 +105,27 @@ export default function Form() {
       />
         </Route>
 
-        <Route exact path='/login'>
+        <Route path='/login'>
           
         <LoginForm
         values={formValues}
         change={inputChange}
-        submit={loginSubmit}
+        submit={signupSubmit}
         disabled={disabled}
         errors={formErrors}
       />
         </Route>
-
+        <Route path='/browse'>
+        <Browser/>
+        </Route>
         <Route exact path='/'>
-        
+
         </Route>
 
         {/* <Route component={Home} path='/' /> */}
         {/* <Route render={props => <Home />} path='/' /> */}
       </Switch>
-    </div>
-    </div>
+  
+    
   )
 }

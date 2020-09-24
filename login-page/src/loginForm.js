@@ -23,9 +23,9 @@ export default function loginForm(props) {
   }
 
   return (
-
-
-    <form className='form' onSubmit={onSubmit}>
+<div className = "container">
+<div className = "mainSection">
+<form className='form' onSubmit={onSubmit}>
       <div className='title'>
         <h1>How to sign in:</h1>
         <p><span className='bold'>1.</span> Enter your credentials</p>
@@ -65,6 +65,8 @@ export default function loginForm(props) {
 
     </form>
 
+</div>
+   </div>
 
   )
 }

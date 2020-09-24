@@ -45,13 +45,14 @@ table {
 /* CSS RESET */
 
 body {
+    
+}
+.mainSection {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100%;
     font-family: 'Poppins', sans-serif; 
-}
-.mainSection {
       padding:25px;
       background:#f1faee;
       border-radius: 5px;

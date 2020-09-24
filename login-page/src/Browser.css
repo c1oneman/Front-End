@@ -1,0 +1,45 @@
+.contentView {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    margin: 0.75rem;
+    padding: 0 15px;
+    width: 45%;
+    color: rgb(60, 62, 68);
+    font-family: -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+    align-items: flex-start;
+}
+.card .title {
+    display: flex;
+    width:100%;
+}
+.right {
+    margin-left: auto;
+}
+.card h1 {
+    font-size: 2em;
+    font-weight: 800;
+}
+.card .category {
+    background-color: aquamarine;
+    margin: 5px 0;
+    color:white;
+    width:inherit;
+    padding:10px;
+    border-radius: 25px;
+    font-weight: 800;
+}
+.card .description {
+    margin: 10px 0;
+}
