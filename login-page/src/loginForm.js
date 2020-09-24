@@ -1,7 +1,6 @@
 import React from 'react'
 import './Login.css'
 import { Link } from 'react-router-dom'
-import { Motion, spring } from 'react-motion';
 export default function loginForm(props) {
   const {
     values,
