@@ -7,11 +7,9 @@ export default function Browser(props) {
     const [testKey] = useState('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNsYXl0b24iLCJzdWJqZWN0IjoyLCJpYXQiOjE2MDA5ODU4NzgsImV4cCI6MTYwMTA3MjI3OH0.jV8foiL5sp2j4cn1wXn6HRbJidpnk-E75pE9kY3fj0k')
     const [posts, setPost] = useState([])
     useEffect(() => {
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-        axios.get({baseUrl}, {
+        axios.get(baseUrl, {
             headers: {
-             // eslint-disable-next-line react-hooks/exhaustive-deps
-                'Authorization':{testKey},
+                'Authorization':testKey,
             }
         })
           .then((result) => {
@@ -21,7 +19,7 @@ export default function Browser(props) {
           .catch((err) => {
             console.log(`oopsie: ${err}`)
           })
-          // eslint-disable-next-line react-hooks/exhaustive-deps
+          // eslint-disable-next-line 
       }, [])
     return (
     <div>
