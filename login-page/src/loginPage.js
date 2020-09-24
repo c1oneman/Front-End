@@ -88,23 +88,24 @@ export default function Form() {
      <div className = "mainSection">
        
 
-       
+      
       
          <Switch>
         {/* With Switch, order your Routes from "more specific path" to least */}
         {/* With Switch, the first Route "wins" */}
         {/* Without Switch, ALL Routes with paths that match are rendered */}
-        <Route path='/signup'>
+        <Route exact path='/signup'>
+        
         <SignupForm
         values={formValues}
         change={inputChange}
-        submit={signupSubmit}
+        submit={loginSubmit}
         disabled={disabled}
         errors={formErrors}
       />
         </Route>
 
-        <Route path='/login'>
+        <Route exact path='/login'>
           
         <LoginForm
         values={formValues}
@@ -115,7 +116,7 @@ export default function Form() {
       />
         </Route>
 
-        <Route path='/'>
+        <Route exact path='/'>
         
         </Route>
 

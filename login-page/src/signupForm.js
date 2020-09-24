@@ -1,5 +1,7 @@
 import React from 'react'
 import './Login.css'
+import { Link } from 'react-router-dom'
+
 export default function signupForm(props) {
   const {
     values,
@@ -51,7 +53,9 @@ export default function signupForm(props) {
           />  
            <p className = 'errors'>{errors.password}</p>
             </div>
-       
+        <div className='row right'>
+        <Link to={`/login`}>Already have an account?</Link>
+       </div>
        <div className = 'row'>
        <button id = "submit" disabled={disabled}>Sign up</button>
         </div>
